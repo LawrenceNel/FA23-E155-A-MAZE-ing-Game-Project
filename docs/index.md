@@ -8,7 +8,7 @@ exclude: true
 # Project Abstract
 
 
-<div style="text-align: center">
+<div style="text-align: middle">
   <img src="./assets/img/Logo.png" alt="logo" width="100" />
   <img src="./assets/img/LAMARCE_logo.png" alt="logo" width="250" />
 </div>
