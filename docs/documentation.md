@@ -8,7 +8,7 @@ permalink: /doc/
 <!-- Include images of the schematics for your system. They should follow best practices for schematic drawings with all parts and pins clearly labeled. You may draw your schematics either with a software tool or neatly by hand. -->
 The following schematic shows how all five components of our system interact with each other. The purchased Wii Nunchuk connects to a breakout board that allows for the I2C communication pins in the nunchuk to be landed on a breadboard or protoboard. The breakout board is then connected to two pins on our STM32 Nucleo-32 that are programmable for I2C communication. All controller data between the MCU and Nunchuk is sent through these two lines. From the MCU, four pins are connected to our iCE40 UP5K in order to establish SPI communication as well as a done signal. All game data from the MCU is sent through this connection to the FPGA. Finally, four pins on the FPGA are sent to our DE-DP14113 LED matrix to establish a psuedo-SPI protocol that is specific to our LED matrix. Displayable game data is sent to the matrix at a speed of 1 MHz.
 <div style="text-align: left">
-  <img src="./assets/schematics/E155 Labs - Project Schematic.png" alt="logo" width="800" />
+  <img src="./assets/schematics/blockdiagram.png" alt="logo" width="800" />
 </div>
 
 # Source Code Overview
