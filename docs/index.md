@@ -17,7 +17,7 @@ For this project, the team wanted something that can exist physically and show o
 
 # System Block Diagram
 <div style="text-align: left">
-  <img src="./assets/schematics/E155 Labs - Project System Block Diagram.jpeg" alt="logo" width="250" />
+  <img src="./assets/schematics/E155 Labs - Project System Block Diagram.jpeg" alt="logo" width="900" />
 </div>
 
 # Meet the Team!
