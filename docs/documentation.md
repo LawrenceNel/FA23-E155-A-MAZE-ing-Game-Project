@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Documentation
-permalink: /
+permalink: /doc/
 exclude: true
 ---
 
