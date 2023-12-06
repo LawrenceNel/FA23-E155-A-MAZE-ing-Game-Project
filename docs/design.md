@@ -18,11 +18,15 @@ When the write or read is complete, a stop condition is enforced, allowing the M
 <div style="text-align: left">
   <img src="./assets/schematics/FPGA_controller_FSM.jpeg" alt="logo1" width="900" />
 </div>
---
+
 Fig 1. Finite state machine controller for the FPGA DE-DP14112 driver.
---
+
+
 
 ## FPGA Block Diagram
 <div style="text-align: left">
   <img src="./assets/schematics/FPGA_block_diagram.jpeg" alt="logo1" width="900" />
 </div>
+
+Fig 2. Block diagram for the FPGA DE-DP14112 driver.
+
