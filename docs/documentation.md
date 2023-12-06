@@ -12,6 +12,14 @@ The following schematic shows how all five components of our system interact wit
   <img src="./assets/schematics/E155 Labs - Project System Block Diagram.jpeg" alt="logo" width="900" />
 </div>
 
+## New Hardware
+
+### Wii Nunchuk
+We purchased a knock off Wii Nunchuk and a breakoutboard from Adafruit. The board takes the special STEMMA QT connection on the controller and breaks out the necessary pins for power and I2C communication. The I2C communication is done using our MCU's I2C peripheral which was not covered in class. The controller senses joystick position, controller rotation, and the state of two buttons
+
+### 32x16 LED Dot Matrix 
+This LED matrix was found in the digital lab. It comes with microcontrollers on board that run on their own version of SPI. It is made up of eight segmented LED panels that lend themselves nicely to mulitplexing. In order to run the display properly, we had to apply SPI and multiplexing together in a creative way to satisfy its communication protocol. 
+
 # Source Code Overview
 <!-- This section should include information to describe the organization of the code base and highlight how the code connects. -->
 The source code for the project is located in the Github repository [here](https://github.com/Martin5009/amazing_game).
