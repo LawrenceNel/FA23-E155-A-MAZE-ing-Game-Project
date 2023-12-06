@@ -21,7 +21,6 @@ For this project, the team wanted something that can exist physically and show o
 </div>
 
 # Meet the Team!
-
 ## Cecilia Li
 An epic gamer that hit gold II
 [Linkedin](https://www.linkedin.com/in/cecilia-huijie-li-722222243/)
