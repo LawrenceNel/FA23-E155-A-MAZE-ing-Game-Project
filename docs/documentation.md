@@ -27,6 +27,7 @@ The code is separated between the FPGA and the MCU. The FPGA folder includes a R
 | Adafruit 32x16 Red Green Dual Color LED Dot Matrix - 7.62mm Pitch - DE-DP14211 | 3054 | 1 | $39.95 | [link](https://www.adafruit.com/product/3054) |
 | STM32L432KC MCU | N/A | 1 | N/A | N/A |
 | UPDUINO v3.0 FPGA | N/A | 1 | N/A | N/A |
+| GF0668B Speaker | N/A | 1 | N/A | N/A |
 
 
 **Total cost: $55.40**
