@@ -11,6 +11,8 @@ permalink: /design/
   <img src="./assets/schematics/E155 Labs - Project Schematic.jpeg" alt="logo1" width="900" />
 </div>
 
+Fig 1. System-level block diagram, including the Wii Nunchuk, MCU, FPGA, LED Matrix, and speaker.
+
 When the write or read is complete, a stop condition is enforced, allowing the MCU to exit controller mode and wait for a communication to be requested again.
   Once the Nunchuck message is received, it is parsed to pull out the x and y positions of the joystick and the states of the two buttons on the controller. Once these inputs are decoded, the MCU translates them into player movements and/or menu interactions and updates the game state as well as the screen that will be displayed on the LED Matrix. The display data is sent to the FPGA over SPI according to the communication standard defined in the FGPA design section. The MCU then waits for the DONE signal from the FPGA, signaling that the FPGA is done shifting data into the display and that the MCU can send over the next message.
 
@@ -19,7 +21,7 @@ When the write or read is complete, a stop condition is enforced, allowing the M
   <img src="./assets/schematics/FPGA_controller_FSM.jpeg" alt="logo1" width="900" />
 </div>
 
-Fig 1. Finite state machine controller for the FPGA DE-DP14112 driver.
+Fig 2. Finite state machine controller for the FPGA DE-DP14112 driver.
 
 
 
@@ -28,5 +30,5 @@ Fig 1. Finite state machine controller for the FPGA DE-DP14112 driver.
   <img src="./assets/schematics/FPGA_block_diagram.jpeg" alt="logo1" width="900" />
 </div>
 
-Fig 2. Block diagram for the FPGA DE-DP14112 driver.
+Fig 3. Block diagram for the FPGA DE-DP14112 driver.
 
