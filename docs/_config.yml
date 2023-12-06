@@ -4,6 +4,7 @@ author: "Lawrence Nelson, Cecilia Li, Martin Susanto"
 theme: minima
 
 header-pages:
+  - design.html
   - documentation.html
   - resources.html
 
