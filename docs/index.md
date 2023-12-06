@@ -16,7 +16,9 @@ After creating a fake company called LAMARCE, the team focused on the creation o
 For this project, the team wanted something that can exist physically and show off what was learned in the microprocessor course. The team also valued applications that were fun and could be enjoyed by other students and faculty. So, the team decided to create some kind of game system that could be a fun artifact from the class as well as an opportunity to learn more about existing hardware and their applications.
 
 # System Block Diagram
-
+<div style="text-align: left">
+  <img src="./assets/schematic/E155 Labs - Project System Block Diagram.jpeg" alt="logo" width="250" />
+</div>
 
 # Meet the Team!
 
