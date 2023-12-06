@@ -33,10 +33,10 @@ The FPGA folder includes a Lattice Radiant Project that contains HDL for an LED 
 | ---- | ----------- | ----- | ---- | ---- |
 | Adafruit Wii Nunchuck Breakout Adapter - Qwiic / STEMMA QT |  4836 | 1 | $2.95 |  [link](https://www.adafruit.com/product/4836) |
 | Adafruit Wii Nunchuk Controller |  342 | 1 | $12.50 |  [link](https://www.adafruit.com/product/342) |
-| Adafruit 32x16 Red Green Dual Color LED Dot Matrix - 7.62mm Pitch - DE-DP14211 | 3054 | 1 | $39.95 | [link](https://www.adafruit.com/product/3054) |
+| Adafruit 32x16 Red Green Dual Color LED Dot Matrix - 7.62mm Pitch - DE-DP14211 | 3054 | 1 | N/A | [link](https://www.adafruit.com/product/3054) |
 | STM32L432KC MCU | N/A | 1 | N/A | N/A |
 | UPDUINO v3.0 FPGA | N/A | 1 | N/A | N/A |
 | GF0668B Speaker | N/A | 1 | N/A | N/A |
 
 
-**Total cost: $55.40**
+**Total cost: $15.45**
