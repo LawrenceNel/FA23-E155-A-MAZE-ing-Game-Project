@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Documentation
-permalink: /doc/
+permalink: /
+exclude: true
 ---
 
 # Schematics
