@@ -32,3 +32,6 @@ A budding renewable energy engineer with an interest in almost every area of eng
 ## Martin Susanto
 Will not hesitate to be handsome and tall
 [Linkedin](https://www.linkedin.com/in/martin-susanto-310721235/)
+
+# Acknowledgements
+The team would like to thank Prof. Josh Brake, Prof. Tina Smilkstein, and the HMC Microprocessor class of FA23 for their help and support throughout our project development.
