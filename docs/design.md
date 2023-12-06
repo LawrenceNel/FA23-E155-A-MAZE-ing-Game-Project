@@ -14,8 +14,6 @@ permalink: /design/
 When the write or read is complete, a stop condition is enforced, allowing the MCU to exit controller mode and wait for a communication to be requested again.
   Once the Nunchuck message is received, it is parsed to pull out the x and y positions of the joystick and the states of the two buttons on the controller. Once these inputs are decoded, the MCU translates them into player movements and/or menu interactions and updates the game state as well as the screen that will be displayed on the LED Matrix. The display data is sent to the FPGA over SPI according to the communication standard defined in the FGPA design section. The MCU then waits for the DONE signal from the FPGA, signaling that the FPGA is done shifting data into the display and that the MCU can send over the next message.
 
-## MCU Block Diagram
-
 # FPGA Design
 
 ## FPGA Block Diagram
