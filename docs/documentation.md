@@ -9,7 +9,7 @@ permalink: /doc/
 The following schematic shows how all five components of our system interact with each other. The Wii Nunchuk connects to a breakout board to allow for easy access to the different I2C signals on a breadboard or protoboard. The breakout board is then connected to two pins on the STM32 Nucleo-32 MCU that are programmable for I2C communication. All controller data between the MCU and Nunchuk is sent through these two lines. The MCU drives the DE-DP14112 LED matrix by sending data to the FPGA over SPI. The DE-DP14112 uses a non-standard serial interface, so the FPGA acts as a "translator" between SPI messages from the MCU and messages to be sent to the display. Displayable game data is sent to the matrix at a speed of 1 MHz.
 
 <div style="text-align: left">
-  <img src="./assets/schematics/E155 Labs - Project System Block Diagram.jpeg" alt="logo" width="900" />
+  <img src="docs/assets/schematics/E155 Labs - Project System Block Diagram.jpeg" alt="logo" width="900" />
 </div>
 
 ## New Hardware
