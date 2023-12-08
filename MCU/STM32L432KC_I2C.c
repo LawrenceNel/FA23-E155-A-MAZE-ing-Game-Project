@@ -17,21 +17,17 @@ void initI2C(void) {
   RCC->APB1ENR1 |= RCC_APB1ENR1_I2C1EN;
   RCC->CCIPR |= _VAL2FLD(RCC_CCIPR_I2C1SEL,0b00);
 
-  // Disable I2C
+  // Disable I2C for configuration
   I2C1->CR1 &= ~I2C_CR1_PE;
   
   // Set pins to standard Speed
   SYSCFG->CFGR1 &= ~SYSCFG_CFGR1_I2C1_FMP;
   SYSCFG->CFGR1 &= ~SYSCFG_CFGR1_I2C_PB6_FMP;
 
-  // Disable Analog Filter and Enable Digital Filter
-  //I2C1->CR1 |= I2C_CR1_ANFOFF;
-  //I2C1->CR1 |= _VAL2FLD(I2C_CR1_DNF,0b0000);
-
-  //ANFOFF
+  // Turn Analog Filter Off
   I2C1->CR1 |= I2C_CR1_ANFOFF;
 
-  //DNF
+  // Turn Digital Filter Off
   I2C1->CR1 &= ~(I2C_CR1_DNF);
   
   // Configure Timing for 100kHz communication in standard mode
@@ -47,7 +43,7 @@ void initI2C(void) {
   I2C1->CR1 |= I2C_CR1_NACKIE;
   I2C1->CR1 |= I2C_CR1_STOPIE;
 
-  // NOSTRETCH
+  // Turn off receiver clock stretching
   I2C1->CR1 &= ~(I2C_CR1_NOSTRETCH);
 
   // Set end commands; hardware controlled
@@ -74,6 +70,8 @@ void initI2C(void) {
 }
 
 void initNunchukFirst(void){
+  // Send initialization bytes to nunchuk to set up data registers
+  
   while(I2C1->CR2 & I2C_CR2_START_Msk); // delay for nbytes setting
   
   // Set number of bytes for transfer
@@ -88,7 +86,7 @@ void initNunchukFirst(void){
   // Set address mode, 7-BIT MODE 
   I2C1->CR2 &= ~I2C_CR2_ADD10;
 
-   // clear nackf
+   // clear nack flag
   I2C1->ICR |= I2C_ICR_NACKCF;
 
   // Set address  0x52 -> 0b0101_0010 -> 0b010_1001
@@ -104,24 +102,19 @@ void initNunchukFirst(void){
   // Set START bit
   I2C1->CR2 |= I2C_CR2_START;
 
-  //char str[20] = "Bruh Moment";
-  //if (I2C_ISR_NACKF) printf("%s", str);
-
   // put data in tx buffer
-   *(volatile char *) (&I2C1->TXDR) = data[0];
-
-   while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-
-   // put data in tx buffer
-   *(volatile char *) (&I2C1->TXDR) = data[1];
+  *(volatile char *) (&I2C1->TXDR) = data[0];
 
   while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-  
-  // I2C1->ICR |= I2C_ICR_STOPCF;
-  
+
+  // put data in tx buffer
+  *(volatile char *) (&I2C1->TXDR) = data[1];
+
+  while(!(I2C1->ISR & I2C_ISR_TXE_Msk));  
 }
 
 void initNunchukSecond(void){
+  // Send more initialization bytes to nunchuk to put data in registers for reading
   while(I2C1->CR2 & I2C_CR2_START_Msk); // delay for nbytes setting
   
   // Set number of bytes for transfer
@@ -152,9 +145,6 @@ void initNunchukSecond(void){
   // Set START bit
   I2C1->CR2 |= I2C_CR2_START;
 
-  //char str[20] = "Bruh Moment";
-  //if (I2C_ISR_NACKF) printf("%s", str);
-
   // put data in tx buffer
   *(volatile char *) (&I2C1->TXDR) = data[0];
 
@@ -164,9 +154,6 @@ void initNunchukSecond(void){
   *(volatile char *) (&I2C1->TXDR) = data[1];
 
   while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-  
-  // I2C1->ICR |= I2C_ICR_STOPCF;
-  
 }
 
 void initNunchukThird(void){
@@ -200,24 +187,14 @@ void initNunchukThird(void){
   // Set START bit
   I2C1->CR2 |= I2C_CR2_START;
 
-  //char str[20] = "Bruh Moment";
-  //if (I2C_ISR_NACKF) printf("%s", str);
-
   // put data in tx buffer
   *(volatile char *) (&I2C1->TXDR) = data[0];
 
   while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-
-   // put data in tx buffer
-  //*(volatile char *) (&I2C1->TXDR) = data[1];
-
-  //while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-  
-  // I2C1->ICR |= I2C_ICR_STOPCF;
-  
 }
 
 void initNunchukPrim(void){
+  // Tells nunchuk to decode data and place into address register
   while(I2C1->CR2 & I2C_CR2_START_Msk); // delay for nbytes setting
   
   // Set number of bytes for transfer
@@ -248,25 +225,15 @@ void initNunchukPrim(void){
   // Set START bit
   I2C1->CR2 |= I2C_CR2_START;
 
-  //char str[20] = "Bruh Moment";
-  //if (I2C_ISR_NACKF) printf("%s", str);
-
   // put data in tx buffer
   *(volatile char *) (&I2C1->TXDR) = data[0];
 
   while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-
-   // put data in tx buffer
-  //*(volatile char *) (&I2C1->TXDR) = data[1];
-
-  //while(!(I2C1->ISR & I2C_ISR_TXE_Msk));
-  
-  // I2C1->ICR |= I2C_ICR_STOPCF;
-  
 }
 
 
 char * readData(void){
+  // Access data register in nunchuk and read bytes
   while(I2C1->CR2 & I2C_CR2_START_Msk); // delay for nbytes setting
 
   // Outline from p 1156
